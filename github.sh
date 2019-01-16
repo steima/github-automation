@@ -99,16 +99,4 @@ echo "Ensuring ${OWNER}/${REPO} is correctly set up"
 ensure_label_exists "${OWNER}" "${REPO}" improve-story "The story is not complete and requires further improvement." e53bb8
 ensure_issue_template_exists "${OWNER}" "${REPO}"
 
-# Update
-# PATCH /repos/:owner/:repo/labels/:current_name
-
-# Read
-# GET /repos/:owner/:repo/labels/:name
-
-#{
-#  "name": "bug",
-#  "description": "Something isn't working",
-#  "color": "f29513"
-#}
-
 PASSWORD=""
