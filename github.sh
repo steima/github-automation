@@ -97,6 +97,8 @@ REPO="${2}"
 echo "Ensuring ${OWNER}/${REPO} is correctly set up"
 
 ensure_label_exists "${OWNER}" "${REPO}" improve-story "The story is not complete and requires further improvement." e53bb8
+ensure_label_exists "${OWNER}" "${REPO}" urgent "A bug which requires urgent attention. Drop all other work and fix these first!" cfbc22
+ensure_label_exists "${OWNER}" "${REPO}" input-required "Requirements are not clear or further input is required from PO." 1eacc2
 ensure_issue_template_exists "${OWNER}" "${REPO}"
 
 PASSWORD=""
