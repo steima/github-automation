@@ -50,7 +50,7 @@ function ensure_label_exists() {
 		echo -n "Label does not exist, creating ... "
 		REPO_BASE_URL=$(build_repo_base_url ${OWNER} ${REPO})
 		curl --user "${USERNAME}:${PASSWORD}" -s -X POST --data "${DATA}" "${REPO_BASE_URL}/labels" > /dev/null
-	fi 
+	fi
 	echo "OK"
 }
 
@@ -99,6 +99,10 @@ echo "Ensuring ${OWNER}/${REPO} is correctly set up"
 ensure_label_exists "${OWNER}" "${REPO}" improve-story "The story is not complete and requires further improvement." e53bb8
 ensure_label_exists "${OWNER}" "${REPO}" urgent "A bug which requires urgent attention. Drop all other work and fix these first!" cfbc22
 ensure_label_exists "${OWNER}" "${REPO}" input-required "Requirements are not clear or further input is required from PO." 1eacc2
+ensure_label_exists "${OWNER}" "${REPO}" inform-customer "Make sure to inform the customer when this goes live." 1eacc2
+ensure_label_exists "${OWNER}" "${REPO}" quick-win "Fix this rather quickly since it is easy to fix and has impact on users." cfbc22
+ensure_label_exists "${OWNER}" "${REPO}" tech-debt "This is actually technical debt which we were aware of." 0f5252
+ensure_label_exists "${OWNER}" "${REPO}" close-candiate "I want to close this issue, who else is in on this?." d73a4a
 ensure_issue_template_exists "${OWNER}" "${REPO}"
 
 PASSWORD=""
